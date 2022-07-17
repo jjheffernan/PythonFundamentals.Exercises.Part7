@@ -37,8 +37,13 @@ def print_language_options(lang_options: Dict[int, str]) -> None:
     """
     print('Please choose a language: ')
     lang_dict.update(lang_options)
-    outlist = lang_dict.keys(), lang_dict.values()
-    print(f"{outlist[0]}: {outlist[1]}")
+    outlist = []
+    for lang in lang_dict:
+        # outlist = lang_dict.keys(), lang_dict.values()
+        # outlist[lang] = lang, lang_dict.get(lang)
+        print(f"{lang}: {lang_dict[lang]}")
+    # print(f"{outlist[0]} \n{outlist[1]}")
+    # print(outlist)
     pass  # remove pass statement and implement me
 
 
@@ -48,7 +53,11 @@ def language_input() -> int:
 
     :return: An integer representing the language choice made by the user
     """
-    pass  # remove pass statement and implement me
+    lang_choice = int(input('Input your language choice as listed above: '))
+    for lang in lang_dict:
+        if lang_choice == lang:
+            return lang_choice
+    # pass  # remove pass statement and implement me
 
 
 def language_choice_is_valid(lang_options: Dict[int, str], lang_choice: int) -> bool:
@@ -62,7 +71,16 @@ def language_choice_is_valid(lang_options: Dict[int, str], lang_choice: int) -> 
     :param lang_choice: An integer representing the value the user selected
     :return: A boolean representing the validity of the lang_choice
     """
-    pass  # remove pass statement and implement me
+    if lang_choice in lang_options:
+        return True
+    else:
+        return False
+
+    # for lang in lang_options:
+    #     if lang_choice == lang_options[lang]:
+    #         return True
+    # return False
+    # pass  # remove pass statement and implement me
 
 
 def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str:
@@ -75,6 +93,7 @@ def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str
     :param lang_choice: The language the user has chosen
     :return:
     """
+    print(name_prompt_dict(lang_choice))
     pass  # remove pass statement and implement me
 
 
@@ -100,7 +119,10 @@ def greet(name: str, greetings_options: Dict[int, str], lang_choice: int) -> Non
     :param lang_choice: The language the user has chosen.
     :return:
     """
-    pass  # remove pass statement and implement me
+    if lang_choice in greetings_options:
+        print(f'{greetings_options[lang_choice]} {name}')
+        return
+    # pass  # remove pass statement and implement me
 
 
 if __name__ == '__main__':
