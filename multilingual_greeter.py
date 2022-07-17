@@ -93,8 +93,8 @@ def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str
     :param lang_choice: The language the user has chosen
     :return:
     """
-    print(name_prompt_dict(lang_choice))
-    pass  # remove pass statement and implement me
+    return name_prompt_options[lang_choice]
+    # pass  # remove pass statement and implement me
 
 
 def name_input(name_prompt: str) -> str:
@@ -104,8 +104,11 @@ def name_input(name_prompt: str) -> str:
     :param name_prompt: A string in the user's chosen language that asks them for their name
     :return: The user's response when asked for their name
     """
-    #
-
+    # print(name_prompt_dict[chosen_lang])
+    chosen_name = name_prompt
+    name = input(chosen_name)
+    # get_name_input(name_prompt_dict)
+    return name
     # pass  # remove pass statement and implement me
 
 
