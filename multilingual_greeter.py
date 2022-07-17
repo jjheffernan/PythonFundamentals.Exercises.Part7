@@ -105,8 +105,7 @@ def name_input(name_prompt: str) -> str:
     :return: The user's response when asked for their name
     """
     # print(name_prompt_dict[chosen_lang])
-    chosen_name = name_prompt
-    name = input(chosen_name)
+    name = input(name_prompt)
     # get_name_input(name_prompt_dict)
     return name
     # pass  # remove pass statement and implement me
